@@ -27,6 +27,8 @@
 		E7E66BBE1DAE8045006CBA8A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E66BBC1DAE8045006CBA8A /* Profile.storyboard */; };
 		E7E66BC01DAE8179006CBA8A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66BBF1DAE8179006CBA8A /* BaseViewController.swift */; };
 		E7E66BC71DAE82B9006CBA8A /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E66BC51DAE82B9006CBA8A /* Discover.storyboard */; };
+		E7E66BC91DAE8BD0006CBA8A /* TouristView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66BC81DAE8BD0006CBA8A /* TouristView.swift */; };
+		E7E66BCB1DAE8C81006CBA8A /* TouristView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E66BCA1DAE8C81006CBA8A /* TouristView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		E7E66BBD1DAE8045006CBA8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Weibo/Base.lproj/Profile.storyboard; sourceTree = SOURCE_ROOT; };
 		E7E66BBF1DAE8179006CBA8A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E7E66BC61DAE82B9006CBA8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Weibo/Base.lproj/Discover.storyboard; sourceTree = SOURCE_ROOT; };
+		E7E66BC81DAE8BD0006CBA8A /* TouristView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouristView.swift; sourceTree = "<group>"; };
+		E7E66BCA1DAE8C81006CBA8A /* TouristView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TouristView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,8 @@
 				E7E66B9B1DADDDB5006CBA8A /* MainViewController.swift */,
 				E7E66BBF1DAE8179006CBA8A /* BaseViewController.swift */,
 				E7E66BAE1DAE7DEB006CBA8A /* Main.storyboard */,
+				E7E66BC81DAE8BD0006CBA8A /* TouristView.swift */,
+				E7E66BCA1DAE8C81006CBA8A /* TouristView.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -377,6 +383,7 @@
 				E7E66BB61DAE7FFD006CBA8A /* Message.storyboard in Resources */,
 				E74FF70A1DA8F86D00012B97 /* Assets.xcassets in Resources */,
 				E7E66BB31DAE7FE8006CBA8A /* Home.storyboard in Resources */,
+				E7E66BCB1DAE8C81006CBA8A /* TouristView.xib in Resources */,
 				E7E66BB91DAE8016006CBA8A /* Null.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,6 +460,7 @@
 				E7E66BA41DADDE00006CBA8A /* ProfileViewController.swift in Sources */,
 				E74FF7031DA8F86D00012B97 /* AppDelegate.swift in Sources */,
 				E7E66BA01DADDDDC006CBA8A /* DiscoverViewController.swift in Sources */,
+				E7E66BC91DAE8BD0006CBA8A /* TouristView.swift in Sources */,
 				E7E66B9C1DADDDB5006CBA8A /* MainViewController.swift in Sources */,
 				E7E66B9E1DADDDCC006CBA8A /* HomeViewController.swift in Sources */,
 				E7E66BC01DAE8179006CBA8A /* BaseViewController.swift in Sources */,
