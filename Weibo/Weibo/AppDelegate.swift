@@ -18,12 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //创建window
-        window = UIWindow(frame: UIScreen.main.bounds)
-        //设置window
-        window?.backgroundColor = UIColor.white
-        window?.rootViewController = MainViewController()
-        //显示window
-        window?.makeKeyAndVisible()
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        //设置window
+//        window?.backgroundColor = UIColor.white
+//        window?.rootViewController = MainViewController()
+//        //显示window
+//        window?.makeKeyAndVisible()
         
         return true
     }
