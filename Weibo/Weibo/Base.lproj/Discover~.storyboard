@@ -14,18 +14,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                <color key="value" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="A9d-uU-m9c" kind="relationship" relationship="viewControllers" id="eSQ-1t-gkF"/>
                         <segue destination="YMX-qt-gKG" kind="relationship" relationship="viewControllers" id="pTK-iK-Rzo"/>
                         <segue destination="Joq-7i-vUa" kind="relationship" relationship="viewControllers" id="Mqm-6W-UZV"/>
-                        <segue destination="bBs-UQ-8lC" kind="relationship" relationship="viewControllers" id="QA8-tM-LPY"/>
-                        <segue destination="jPV-3V-OOI" kind="relationship" relationship="viewControllers" id="hEQ-IR-9HK"/>
+                        <segue destination="ZsM-IC-d9J" kind="relationship" relationship="viewControllers" id="QA8-tM-LPY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNs-2i-Umh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -62,6 +56,52 @@
             </objects>
             <point key="canvasLocation" x="-195" y="1371"/>
         </scene>
+        <!--Root View Controller-->
+        <scene sceneID="MpZ-Xe-DyX">
+            <objects>
+                <tableViewController id="pcx-WT-rhe" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wOS-gN-NAR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="REl-XS-Wfo">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="REl-XS-Wfo" id="oUX-2n-T7y">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pcx-WT-rhe" id="rzi-oA-1iy"/>
+                            <outlet property="delegate" destination="pcx-WT-rhe" id="DAi-eW-xWQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="HWH-6C-ISW"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7tL-6x-vPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="943" y="1634"/>
+        </scene>
+        <!--发现-->
+        <scene sceneID="rTP-yA-9MP">
+            <objects>
+                <navigationController id="ZsM-IC-d9J" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="发现" image="tabbar_discover" selectedImage="tabbar_discover_highlighted" id="VXg-0s-fdF"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c7d-4L-jmW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pcx-WT-rhe" kind="relationship" relationship="rootViewController" id="mb5-gn-EbU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ia-kM-qwd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10" y="1634"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="PzX-RT-nRo">
             <objects>
@@ -72,15 +112,9 @@
             </objects>
             <point key="canvasLocation" x="-182" y="1596"/>
         </scene>
-        <!--Discover-->
-        <scene sceneID="edZ-Sn-fHq">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Discover" id="bBs-UQ-8lC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="WrE-yC-FQT"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8MO-pZ-zJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-194" y="1478"/>
-        </scene>
     </scenes>
+    <resources>
+        <image name="tabbar_discover" width="30" height="30"/>
+        <image name="tabbar_discover_highlighted" width="30" height="30"/>
+    </resources>
 </document>

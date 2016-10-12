@@ -24,8 +24,9 @@
 		E7E66BB31DAE7FE8006CBA8A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E66BB11DAE7FE8006CBA8A /* Home.storyboard */; };
 		E7E66BB61DAE7FFD006CBA8A /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E66BB41DAE7FFD006CBA8A /* Message.storyboard */; };
 		E7E66BB91DAE8016006CBA8A /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E66BB71DAE8016006CBA8A /* Null.storyboard */; };
-		E7E66BBB1DAE802D006CBA8A /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E66BBA1DAE802D006CBA8A /* Discover.storyboard */; };
 		E7E66BBE1DAE8045006CBA8A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E66BBC1DAE8045006CBA8A /* Profile.storyboard */; };
+		E7E66BC01DAE8179006CBA8A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66BBF1DAE8179006CBA8A /* BaseViewController.swift */; };
+		E7E66BC71DAE82B9006CBA8A /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E66BC51DAE82B9006CBA8A /* Discover.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +72,9 @@
 		E7E66BB21DAE7FE8006CBA8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Weibo/Base.lproj/Home.storyboard; sourceTree = SOURCE_ROOT; };
 		E7E66BB51DAE7FFD006CBA8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Weibo/Base.lproj/Message.storyboard; sourceTree = SOURCE_ROOT; };
 		E7E66BB81DAE8016006CBA8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Weibo/Base.lproj/Null.storyboard; sourceTree = SOURCE_ROOT; };
-		E7E66BBA1DAE802D006CBA8A /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Discover.storyboard; path = ../Main/Discover.storyboard; sourceTree = "<group>"; };
 		E7E66BBD1DAE8045006CBA8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Weibo/Base.lproj/Profile.storyboard; sourceTree = SOURCE_ROOT; };
+		E7E66BBF1DAE8179006CBA8A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E7E66BC61DAE82B9006CBA8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Weibo/Base.lproj/Discover.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,8 +195,8 @@
 		E7E66B951DADD7B9006CBA8A /* Discover */ = {
 			isa = PBXGroup;
 			children = (
-				E7E66BBA1DAE802D006CBA8A /* Discover.storyboard */,
 				E7E66B9F1DADDDDC006CBA8A /* DiscoverViewController.swift */,
+				E7E66BC51DAE82B9006CBA8A /* Discover.storyboard */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -213,6 +215,7 @@
 			children = (
 				E7E66BA51DAE15F8006CBA8A /* Resource */,
 				E7E66B9B1DADDDB5006CBA8A /* MainViewController.swift */,
+				E7E66BBF1DAE8179006CBA8A /* BaseViewController.swift */,
 				E7E66BAE1DAE7DEB006CBA8A /* Main.storyboard */,
 			);
 			path = Main;
@@ -368,12 +371,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7E66BB01DAE7DEB006CBA8A /* Main.storyboard in Resources */,
+				E7E66BC71DAE82B9006CBA8A /* Discover.storyboard in Resources */,
 				E7E66BA81DAE15F8006CBA8A /* MainVCSettings.json in Resources */,
 				E7E66BBE1DAE8045006CBA8A /* Profile.storyboard in Resources */,
 				E7E66BB61DAE7FFD006CBA8A /* Message.storyboard in Resources */,
 				E74FF70A1DA8F86D00012B97 /* Assets.xcassets in Resources */,
 				E7E66BB31DAE7FE8006CBA8A /* Home.storyboard in Resources */,
-				E7E66BBB1DAE802D006CBA8A /* Discover.storyboard in Resources */,
 				E7E66BB91DAE8016006CBA8A /* Null.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +455,7 @@
 				E7E66BA01DADDDDC006CBA8A /* DiscoverViewController.swift in Sources */,
 				E7E66B9C1DADDDB5006CBA8A /* MainViewController.swift in Sources */,
 				E7E66B9E1DADDDCC006CBA8A /* HomeViewController.swift in Sources */,
+				E7E66BC01DAE8179006CBA8A /* BaseViewController.swift in Sources */,
 				E7E66BA21DADDDF1006CBA8A /* MessageViewController.swift in Sources */,
 				E7E66BA91DAE15F8006CBA8A /* NullViewController.swift in Sources */,
 				E7E66BAB1DAE3D39006CBA8A /* UIButton-Extension.swift in Sources */,
@@ -531,6 +535,15 @@
 				E7E66BBD1DAE8045006CBA8A /* Base */,
 			);
 			name = Profile.storyboard;
+			path = ../Main;
+			sourceTree = "<group>";
+		};
+		E7E66BC51DAE82B9006CBA8A /* Discover.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7E66BC61DAE82B9006CBA8A /* Base */,
+			);
+			name = Discover.storyboard;
 			path = ../Main;
 			sourceTree = "<group>";
 		};
