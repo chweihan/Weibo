@@ -10,7 +10,7 @@ import UIKit
 
 class BaseViewController: UITableViewController {
 
-    var isLogin = false
+    var isLogin = true
     
     var touristView : TouristView?
     
@@ -29,8 +29,8 @@ class BaseViewController: UITableViewController {
         touristView?.registerButton .addTarget(self, action: #selector(self.registerBtnClick), for: .touchUpInside)
         touristView?.loginButton .addTarget(self, action: #selector(self.loginBtnClick), for: .touchUpInside)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .done, target: self, action: #selector(self.registerBtnClick))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .done, target: self, action: #selector(self.loginBtnClick))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(self.registerBtnClick))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(self.loginBtnClick))
     }
     
     func registerBtnClick() {

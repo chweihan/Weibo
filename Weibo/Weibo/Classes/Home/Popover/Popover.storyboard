@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="T5N-Ar-nSY">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Popover View Controller-->
+        <scene sceneID="XJl-Ea-NFG">
+            <objects>
+                <viewController id="T5N-Ar-nSY" customClass="PopoverViewController" customModule="Weibo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ub9-ED-zB8"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Eb-j6-TMK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RAL-el-Dgv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popover_background" translatesAutoresizingMaskIntoConstraints="NO" id="v8I-Hh-baf"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HDw-KE-rP8">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="v8I-Hh-baf" secondAttribute="trailing" id="9nk-3i-hMt"/>
+                            <constraint firstItem="9Eb-j6-TMK" firstAttribute="top" secondItem="HDw-KE-rP8" secondAttribute="bottom" constant="20" id="Dmg-EK-LK0"/>
+                            <constraint firstItem="HDw-KE-rP8" firstAttribute="top" secondItem="Ub9-ED-zB8" secondAttribute="bottom" constant="20" id="a6b-pL-Kbb"/>
+                            <constraint firstItem="9Eb-j6-TMK" firstAttribute="top" secondItem="v8I-Hh-baf" secondAttribute="bottom" id="dlo-EA-09B"/>
+                            <constraint firstAttribute="trailing" secondItem="HDw-KE-rP8" secondAttribute="trailing" constant="20" id="ind-BA-tg4"/>
+                            <constraint firstItem="v8I-Hh-baf" firstAttribute="leading" secondItem="RAL-el-Dgv" secondAttribute="leading" id="qpT-Wo-NIg"/>
+                            <constraint firstItem="HDw-KE-rP8" firstAttribute="leading" secondItem="RAL-el-Dgv" secondAttribute="leading" constant="20" id="reG-iT-SEN"/>
+                            <constraint firstItem="v8I-Hh-baf" firstAttribute="top" secondItem="Ub9-ED-zB8" secondAttribute="bottom" id="vx8-vs-I4h"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIj-22-pLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4" y="-213"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="popover_background" width="217" height="49"/>
+    </resources>
+</document>
