@@ -21,8 +21,34 @@ class BaseViewController: UITableViewController {
     }
     
     func setupTouristView() {
-        let otherView = TouristView.TouristView()
-        view = otherView
+        touristView = TouristView.TouristView()
+        view = touristView
+        
+//        touristView?.delegate = self
+        
+        touristView?.registerButton .addTarget(self, action: #selector(self.registerBtnClick), for: .touchUpInside)
+        touristView?.loginButton .addTarget(self, action: #selector(self.loginBtnClick), for: .touchUpInside)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .done, target: self, action: #selector(self.registerBtnClick))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .done, target: self, action: #selector(self.loginBtnClick))
+    }
+    
+    func registerBtnClick() {
+        print("registerBtnClick")
     }
 
+    
+    func loginBtnClick() {
+        print("loginBtnClick")
+    }
 }
+
+//extension BaseViewController : TouristViewDelegate {
+//    func touristViewDidRegisterBtnClick(touristView : TouristView) {
+//        print(".")
+//    }
+//    
+//    func touristViewDidLoginBtnClick(touristView : TouristView) {
+//        print(".")
+//    }
+//}

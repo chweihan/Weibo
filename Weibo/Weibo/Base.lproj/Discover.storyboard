@@ -5,7 +5,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--发现-->
         <scene sceneID="MpZ-Xe-DyX">
             <objects>
                 <tableViewController id="pcx-WT-rhe" customClass="DiscoverViewController" customModule="Weibo" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                             <outlet property="delegate" destination="pcx-WT-rhe" id="DAi-eW-xWQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="HWH-6C-ISW"/>
+                    <navigationItem key="navigationItem" title="发现" id="HWH-6C-ISW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tL-6x-vPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

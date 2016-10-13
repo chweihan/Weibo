@@ -5,7 +5,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--我-->
         <scene sceneID="nio-9X-3Yx">
             <objects>
                 <tableViewController id="tqn-Ro-he7" customClass="ProfileViewController" customModule="Weibo" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                             <outlet property="delegate" destination="tqn-Ro-he7" id="IWh-ab-mCZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="CHX-o8-1aV"/>
+                    <navigationItem key="navigationItem" title="我" id="CHX-o8-1aV"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M6Y-4Z-5mG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

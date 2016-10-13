@@ -5,7 +5,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--消息-->
         <scene sceneID="N5s-gc-jjj">
             <objects>
                 <tableViewController id="egS-vG-10r" customClass="MessageViewController" customModule="Weibo" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                             <outlet property="delegate" destination="egS-vG-10r" id="FuF-FR-79W"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="hcQ-LI-znk"/>
+                    <navigationItem key="navigationItem" title="消息" id="hcQ-LI-znk"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7t-o3-Ghu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
