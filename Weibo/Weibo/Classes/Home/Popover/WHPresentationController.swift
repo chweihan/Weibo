@@ -19,6 +19,8 @@ class WHPresentationController: UIPresentationController {
      6.presentView()非常重要,通过该方法能够拿到弹出来的视图     
      */
     
+    var presentedFrame = CGRect.zero
+    
     override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
     }
@@ -26,7 +28,7 @@ class WHPresentationController: UIPresentationController {
     //用于布局专场动画弹出来的控件
     override func containerViewWillLayoutSubviews() {
         //设置弹出视图的尺寸
-        presentedView?.frame = CGRect(x: 100, y: 45, width: 200, height: 200)
+        presentedView?.frame = presentedFrame  //CGRect(x: 100, y: 45, width: 200, height: 200)
         //添加蒙版
         containerView?.insertSubview(coverButton, at: 0)
         coverButton.addTarget(self, action: #selector(self.coverBtnClick), for: .touchUpInside)

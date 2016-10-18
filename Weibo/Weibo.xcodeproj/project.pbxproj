@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9DF199FBFA1179DDA72B40D /* Pods_Weibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E6E7712CF5EC48D133D80F /* Pods_Weibo.framework */; };
+		C9DF199FBFA1179DDA72B40D /* Pods_Weibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E6E7712CF5EC48D133D80F /* Pods_Weibo.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E74FF7031DA8F86D00012B97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74FF7021DA8F86D00012B97 /* AppDelegate.swift */; };
 		E74FF70A1DA8F86D00012B97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74FF7091DA8F86D00012B97 /* Assets.xcassets */; };
 		E74FF7181DA8F86D00012B97 /* WeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74FF7171DA8F86D00012B97 /* WeiboTests.swift */; };
@@ -34,6 +34,9 @@
 		E7E66BD61DAF72E9006CBA8A /* Popover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E66BD51DAF72E9006CBA8A /* Popover.storyboard */; };
 		E7E66BD81DAF780B006CBA8A /* WHPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66BD71DAF780B006CBA8A /* WHPresentationController.swift */; };
 		E7E66BDA1DAF906F006CBA8A /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66BD91DAF906F006CBA8A /* PopoverViewController.swift */; };
+		E7E66CA41DB46E17006CBA8A /* WHPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66CA31DB46E17006CBA8A /* WHPresentationManager.swift */; };
+		E7E66CA71DB479D8006CBA8A /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E66CA61DB479D8006CBA8A /* QRCode.storyboard */; };
+		E7E66CA91DB49AA4006CBA8A /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66CA81DB49AA4006CBA8A /* QRCodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,9 @@
 		E7E66BD51DAF72E9006CBA8A /* Popover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popover.storyboard; sourceTree = "<group>"; };
 		E7E66BD71DAF780B006CBA8A /* WHPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHPresentationController.swift; sourceTree = "<group>"; };
 		E7E66BD91DAF906F006CBA8A /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		E7E66CA31DB46E17006CBA8A /* WHPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHPresentationManager.swift; sourceTree = "<group>"; };
+		E7E66CA61DB479D8006CBA8A /* QRCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
+		E7E66CA81DB49AA4006CBA8A /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +224,7 @@
 		E7E66B961DADD7B9006CBA8A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E7E66CA51DB479BE006CBA8A /* QRCode */,
 				E7E66BD41DAF72C9006CBA8A /* Popover */,
 				E7E66B9D1DADDDCC006CBA8A /* HomeViewController.swift */,
 				E7E66BB11DAE7FE8006CBA8A /* Home.storyboard */,
@@ -279,11 +286,21 @@
 		E7E66BD41DAF72C9006CBA8A /* Popover */ = {
 			isa = PBXGroup;
 			children = (
-				E7E66BD91DAF906F006CBA8A /* PopoverViewController.swift */,
 				E7E66BD51DAF72E9006CBA8A /* Popover.storyboard */,
+				E7E66BD91DAF906F006CBA8A /* PopoverViewController.swift */,
 				E7E66BD71DAF780B006CBA8A /* WHPresentationController.swift */,
+				E7E66CA31DB46E17006CBA8A /* WHPresentationManager.swift */,
 			);
 			path = Popover;
+			sourceTree = "<group>";
+		};
+		E7E66CA51DB479BE006CBA8A /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				E7E66CA61DB479D8006CBA8A /* QRCode.storyboard */,
+				E7E66CA81DB49AA4006CBA8A /* QRCodeViewController.swift */,
+			);
+			path = QRCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +421,7 @@
 				E7E66BA81DAE15F8006CBA8A /* MainVCSettings.json in Resources */,
 				E7E66BBE1DAE8045006CBA8A /* Profile.storyboard in Resources */,
 				E7E66BB61DAE7FFD006CBA8A /* Message.storyboard in Resources */,
+				E7E66CA71DB479D8006CBA8A /* QRCode.storyboard in Resources */,
 				E74FF70A1DA8F86D00012B97 /* Assets.xcassets in Resources */,
 				E7E66BB31DAE7FE8006CBA8A /* Home.storyboard in Resources */,
 				E7E66BCB1DAE8C81006CBA8A /* TouristView.xib in Resources */,
@@ -483,6 +501,7 @@
 			files = (
 				E7E66BA41DADDE00006CBA8A /* ProfileViewController.swift in Sources */,
 				E74FF7031DA8F86D00012B97 /* AppDelegate.swift in Sources */,
+				E7E66CA91DB49AA4006CBA8A /* QRCodeViewController.swift in Sources */,
 				E7E66BDA1DAF906F006CBA8A /* PopoverViewController.swift in Sources */,
 				E7E66BCF1DAF3E07006CBA8A /* UIBarButtonItem-Extension.swift in Sources */,
 				E7E66BA01DADDDDC006CBA8A /* DiscoverViewController.swift in Sources */,
@@ -494,6 +513,7 @@
 				E7E66BA21DADDDF1006CBA8A /* MessageViewController.swift in Sources */,
 				E7E66BA91DAE15F8006CBA8A /* NullViewController.swift in Sources */,
 				E7E66BD31DAF6802006CBA8A /* TitleButton.swift in Sources */,
+				E7E66CA41DB46E17006CBA8A /* WHPresentationManager.swift in Sources */,
 				E7E66BAB1DAE3D39006CBA8A /* UIButton-Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,7 +705,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 3596LNP7HE;
 				INFOPLIST_FILE = Weibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cweihan.Weibo;
 				PRODUCT_NAME = Weibo;
@@ -701,7 +721,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 3596LNP7HE;
 				INFOPLIST_FILE = Weibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cweihan.Weibo;
 				PRODUCT_NAME = Weibo;
