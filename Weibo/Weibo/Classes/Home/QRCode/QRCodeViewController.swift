@@ -11,6 +11,9 @@ import AVFoundation
 
 class QRCodeViewController: UIViewController {
 
+    //描述
+    @IBOutlet weak var textLabel: UILabel!
+    
     @IBOutlet weak var customTabBar: UITabBar!
     //容器高度约束
     @IBOutlet weak var containerHeightCons: NSLayoutConstraint!
@@ -105,7 +108,10 @@ class QRCodeViewController: UIViewController {
     private lazy var output : AVCaptureMetadataOutput = AVCaptureMetadataOutput()
     
     //预览图层
-    private lazy var previewLayer : AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.session)
+    lazy var previewLayer : AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.session)
+    
+    //专门用于保存描边的图层
+    lazy var containerLayer : CALayer = CALayer()
     
 }
 
@@ -131,6 +137,79 @@ extension QRCodeViewController : AVCaptureMetadataOutputObjectsDelegate {
     ///只要扫描到结果就会调用
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
 //        print(metadataObjects.last)
+        
+//        Optional(<AVMetadataMachineReadableCodeObject: 0x174039420, 
+//        type="org.iso.QRCode",
+//        bounds={ 0.3,0.2 0.3x0.6 }
+//        >corners { 0.4,0.8 0.7,0.7 0.6,0.2 0.3,0.3 }, 
+//        time 315779740174375, 
+//        stringValue "http://weixin.qq.com/r/nsTRySbE43ucrWKq95GM")
+        
+        clearLayers()
+        
+        guard let metadata = metadataObjects.last as? AVMetadataObject else {
+            return
+        }
+        
+        //转换前：corners { 0.4,0.8 0.7,0.7 0.6,0.2 0.3,0.3 }
+        //转换后：corners { 63.1,206.5 81.0,423.0 299.3,411.8 284.5,185.9 }
+        let objc = previewLayer.transformedMetadataObject(for: metadata)
+        
+        print((objc as! AVMetadataMachineReadableCodeObject).corners)
+        
+        //对扫描到的二维码进行描边
+        drawLines(objc: objc as! AVMetadataMachineReadableCodeObject)
+    }
+    
+    //绘制描边
+    private func drawLines(objc : AVMetadataMachineReadableCodeObject) {
+        //安全校验
+        guard let array = objc.corners else {
+            return
+        }
+        
+        //创建图层，用于保存绘制的矩形
+        let layer = CAShapeLayer()
+        layer.lineWidth = 2
+        layer.strokeColor = UIColor.orange.cgColor
+        layer.fillColor = UIColor.clear.cgColor
+        
+        //创建UIBezierPath 绘制矩形
+        let path = UIBezierPath()
+        var point = CGPoint.zero
+        var index = 0
+        point = CGPoint.init(dictionaryRepresentation: (array[index] as! CFDictionary))!
+        index = index + 1
+        
+        //将起点移动到某一个点
+        path.move(to: point)
+        
+        //连接其他线段
+        while index < array.count {
+            point = CGPoint.init(dictionaryRepresentation: (array[index] as! CFDictionary))!
+            index = index + 1
+            path.addLine(to: point)
+        }
+        
+        //关闭路径
+        path.close()
+        
+        layer.path = path.cgPath
+        
+        //将用于保存矩形的图层添加到界面上
+        containerLayer.addSublayer(layer)
+    }
+    
+    /// 清空描边
+    private func clearLayers()
+    {
+        guard let subLayers = containerLayer.sublayers else {
+            return
+        }
+        
+        for layer in subLayers {
+            layer.removeFromSuperlayer()
+        }
     }
 }
 

@@ -63,11 +63,18 @@
                                     <constraint firstAttribute="trailing" secondItem="gyt-Ra-FSf" secondAttribute="trailing" id="zPp-tV-j9x"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="将二维码放入框内, 即可扫描二维码" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyu-ex-fEP">
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lcA-24-Oyn" firstAttribute="centerX" secondItem="P8d-HH-ZEb" secondAttribute="centerX" id="7RC-g2-Wib"/>
+                            <constraint firstItem="kyu-ex-fEP" firstAttribute="top" secondItem="lcA-24-Oyn" secondAttribute="bottom" constant="15" id="J15-Gy-ZFo"/>
                             <constraint firstItem="lcA-24-Oyn" firstAttribute="centerY" secondItem="P8d-HH-ZEb" secondAttribute="centerY" id="jBL-50-QGC"/>
+                            <constraint firstItem="kyu-ex-fEP" firstAttribute="centerX" secondItem="P8d-HH-ZEb" secondAttribute="centerX" id="nlD-IW-Ie6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="扫一扫" id="oOq-po-acC">
@@ -87,6 +94,7 @@
                         <outlet property="customTabBar" destination="QUw-BX-wYJ" id="bXL-zR-VZ8"/>
                         <outlet property="scanLineCons" destination="fR4-1P-P2v" id="FaQ-J2-9LZ"/>
                         <outlet property="scanLineView" destination="gyt-Ra-FSf" id="01W-Qq-5X6"/>
+                        <outlet property="textLabel" destination="kyu-ex-fEP" id="yG6-gd-ntK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37p-a6-v9g" userLabel="First Responder" sceneMemberID="firstResponder"/>

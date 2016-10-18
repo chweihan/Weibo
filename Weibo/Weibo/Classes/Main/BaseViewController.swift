@@ -10,7 +10,7 @@ import UIKit
 
 class BaseViewController: UITableViewController {
 
-    var isLogin = true
+    var isLogin = false
     
     var touristView : TouristView?
     
@@ -40,6 +40,9 @@ class BaseViewController: UITableViewController {
     
     func loginBtnClick() {
         print("loginBtnClick")
+        let sb = UIStoryboard(name: "OAuth", bundle: nil)
+        let vc = sb.instantiateInitialViewController()!
+        present(vc, animated: true, completion: nil)
     }
 }
 
