@@ -28,9 +28,7 @@ class OAuthViewController: UIViewController {
         let request = URLRequest(url: url)
         
         webView.loadRequest(request)
-        
     }
-
 }
 
 extension OAuthViewController : UIWebViewDelegate{
@@ -52,44 +50,45 @@ extension OAuthViewController : UIWebViewDelegate{
         guard let urlStr = request.url?.absoluteString else {
             return false
         }
-        if urlStr.hasPrefix("http://www.baidu.com") {
+        if !urlStr.hasPrefix("http://www.baidu.com/") {
             print("不是授权回调页面")
             return true
         }
         print("是授权回调页面")
-
         //判断授权回调的地址中是否包含code=
         let key = "code="
         if urlStr.contains(key) {
             let code = request.url!.query?.substring(from: key.endIndex)
-            print(code)
-            return true
+            let codeStr = (code! as NSString).substring(to: 32)
+            loadAccessToken(codeStr : codeStr)
+            return false
         }
         print("授权失败")
-        return true
+        return false
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    private func loadAccessToken(codeStr : String) {
+        
+        // 注意:redirect_uri必须和开发中平台中填写的一模一样
+        // 1.准备请求路径
+        let path = "https://api.weibo.com/oauth2/access_token"
+        
+        // 2.准备请求参数
+        let params = ["client_id": "3090663153", "client_secret": "6ab4bbc298a13dc13a39360a4ff8f6ed", "grant_type": "authorization_code", "code": codeStr, "redirect_uri": "http://www.baidu.com"]
+        
+        NetworkTool.shareInstance.post(path, parameters: params, progress: nil, success: { (task: URLSessionDataTask, responseObj: Any?) in
+            
+            let userAccount = UserAccount.init(dict: responseObj! as! [String : AnyObject])
+           
+            print(userAccount.saveAccount())
+            
+        }) { (task: URLSessionDataTask?, error: Error) in
+            print(error)
+        }
+       
+        
+        
+    }
     
     
 }

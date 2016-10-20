@@ -12,6 +12,7 @@
 		E74FF70A1DA8F86D00012B97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74FF7091DA8F86D00012B97 /* Assets.xcassets */; };
 		E74FF7181DA8F86D00012B97 /* WeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74FF7171DA8F86D00012B97 /* WeiboTests.swift */; };
 		E74FF7231DA8F86E00012B97 /* WeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74FF7221DA8F86E00012B97 /* WeiboUITests.swift */; };
+		E7C9DD971DB7514B00D49180 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C9DD961DB7514B00D49180 /* UserAccount.swift */; };
 		E7E66B9C1DADDDB5006CBA8A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66B9B1DADDDB5006CBA8A /* MainViewController.swift */; };
 		E7E66B9E1DADDDCC006CBA8A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66B9D1DADDDCC006CBA8A /* HomeViewController.swift */; };
 		E7E66BA01DADDDDC006CBA8A /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66B9F1DADDDDC006CBA8A /* DiscoverViewController.swift */; };
@@ -39,6 +40,7 @@
 		E7E66CA91DB49AA4006CBA8A /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66CA81DB49AA4006CBA8A /* QRCodeViewController.swift */; };
 		E7E66CAC1DB5F974006CBA8A /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66CAB1DB5F974006CBA8A /* OAuthViewController.swift */; };
 		E7E66CAE1DB5F97E006CBA8A /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E66CAD1DB5F97E006CBA8A /* OAuth.storyboard */; };
+		E7E66CB01DB61CBE006CBA8A /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66CAF1DB61CBE006CBA8A /* NetworkTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,7 @@
 		E74FF71E1DA8F86D00012B97 /* WeiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E74FF7221DA8F86E00012B97 /* WeiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboUITests.swift; sourceTree = "<group>"; };
 		E74FF7241DA8F86E00012B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7C9DD961DB7514B00D49180 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		E7E66B9B1DADDDB5006CBA8A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E7E66B9D1DADDDCC006CBA8A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E7E66B9F1DADDDDC006CBA8A /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		E7E66CA81DB49AA4006CBA8A /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		E7E66CAB1DB5F974006CBA8A /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		E7E66CAD1DB5F97E006CBA8A /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
+		E7E66CAF1DB61CBE006CBA8A /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +278,7 @@
 				E7E66BAA1DAE3D38006CBA8A /* UIButton-Extension.swift */,
 				E7E66BCE1DAF3E07006CBA8A /* UIBarButtonItem-Extension.swift */,
 				E7E66BD21DAF6802006CBA8A /* TitleButton.swift */,
+				E7E66CAF1DB61CBE006CBA8A /* NetworkTool.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 			children = (
 				E7E66CAB1DB5F974006CBA8A /* OAuthViewController.swift */,
 				E7E66CAD1DB5F97E006CBA8A /* OAuth.storyboard */,
+				E7C9DD961DB7514B00D49180 /* UserAccount.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -519,11 +525,13 @@
 				E7E66CA91DB49AA4006CBA8A /* QRCodeViewController.swift in Sources */,
 				E7E66CAC1DB5F974006CBA8A /* OAuthViewController.swift in Sources */,
 				E7E66BDA1DAF906F006CBA8A /* PopoverViewController.swift in Sources */,
+				E7C9DD971DB7514B00D49180 /* UserAccount.swift in Sources */,
 				E7E66BCF1DAF3E07006CBA8A /* UIBarButtonItem-Extension.swift in Sources */,
 				E7E66BA01DADDDDC006CBA8A /* DiscoverViewController.swift in Sources */,
 				E7E66BC91DAE8BD0006CBA8A /* TouristView.swift in Sources */,
 				E7E66BD81DAF780B006CBA8A /* WHPresentationController.swift in Sources */,
 				E7E66B9C1DADDDB5006CBA8A /* MainViewController.swift in Sources */,
+				E7E66CB01DB61CBE006CBA8A /* NetworkTool.swift in Sources */,
 				E7E66B9E1DADDDCC006CBA8A /* HomeViewController.swift in Sources */,
 				E7E66BC01DAE8179006CBA8A /* BaseViewController.swift in Sources */,
 				E7E66BA21DADDDF1006CBA8A /* MessageViewController.swift in Sources */,
