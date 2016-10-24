@@ -26,7 +26,8 @@ class NetworkTool: AFHTTPSessionManager {
         
 //        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
         
-        instance.responseSerializer.acceptableContentTypes = NSSet(object: "text/plain") as? Set
+        instance.responseSerializer.acceptableContentTypes = NSSet(objects:"application/json", "text/json", "text/javascript", "text/plain") as? Set
+
         
         return instance
     }()

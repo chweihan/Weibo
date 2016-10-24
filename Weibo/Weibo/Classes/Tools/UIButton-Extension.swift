@@ -10,16 +10,22 @@ import UIKit
 
 extension UIButton {
     
-    convenience init(_ imageName : String , _ backgroundImageName : String) {
+    convenience init(_ imageName : String? , _ backgroundImageName : String?) {
         
         self.init()
         
-        //设置按钮前景图片
-        setImage(UIImage(named: imageName), for: .normal)
-        setImage(UIImage(named: imageName + "_highlighted"), for: .highlighted)
-        //设置按钮背景图片
-        setBackgroundImage(UIImage(named: backgroundImageName), for: .normal)
-        setBackgroundImage(UIImage(named: backgroundImageName + "_highlighted"), for: .highlighted)
+        if let name = imageName {
+            //设置按钮前景图片
+            setImage(UIImage(named: name), for: .normal)
+            setImage(UIImage(named: name + "_highlighted"), for: .highlighted)
+
+        }
+        
+        if let backgroundName = backgroundImageName {
+            //设置按钮背景图片
+            setBackgroundImage(UIImage(named: backgroundName), for: .normal)
+            setBackgroundImage(UIImage(named: backgroundName + "_highlighted"), for: .highlighted)
+        }
         
         //设置按钮尺寸
         sizeToFit()

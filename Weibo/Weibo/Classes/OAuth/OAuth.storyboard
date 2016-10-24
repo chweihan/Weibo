@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MfD-I2-iIp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4dh-Ag-vIH">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Auth View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="d7a-1F-eqU">
+            <objects>
+                <navigationController id="4dh-Ag-vIH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="E1r-ZX-mmm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MfD-I2-iIp" kind="relationship" relationship="rootViewController" id="w6r-lO-b0h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gtg-xX-WK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-866" y="-248"/>
+        </scene>
+        <!--登录-->
         <scene sceneID="Kbb-B5-byy">
             <objects>
                 <viewController id="MfD-I2-iIp" customClass="OAuthViewController" customModule="Weibo" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,19 +40,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NR7-Fg-Sur" firstAttribute="top" secondItem="D63-qv-IN6" secondAttribute="bottom" id="7Wd-Qn-o4G"/>
-                            <constraint firstAttribute="trailing" secondItem="NR7-Fg-Sur" secondAttribute="trailing" id="8nr-D0-98B"/>
-                            <constraint firstItem="m8X-bU-VC2" firstAttribute="top" secondItem="NR7-Fg-Sur" secondAttribute="bottom" id="Nsk-ol-fi2"/>
-                            <constraint firstItem="NR7-Fg-Sur" firstAttribute="leading" secondItem="3lG-OX-2IP" secondAttribute="leading" id="nie-k5-EJK"/>
+                            <constraint firstAttribute="trailing" secondItem="NR7-Fg-Sur" secondAttribute="trailing" id="9zZ-2L-O4v"/>
+                            <constraint firstItem="NR7-Fg-Sur" firstAttribute="top" secondItem="3lG-OX-2IP" secondAttribute="top" id="aYo-sx-Ew4"/>
+                            <constraint firstItem="m8X-bU-VC2" firstAttribute="top" secondItem="NR7-Fg-Sur" secondAttribute="bottom" id="r9s-5r-W8b"/>
+                            <constraint firstItem="NR7-Fg-Sur" firstAttribute="leading" secondItem="3lG-OX-2IP" secondAttribute="leading" id="xj9-7N-e8p"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="登录" id="EMc-FY-2gd">
+                        <barButtonItem key="leftBarButtonItem" title="关闭" id="q5w-1l-daJ">
+                            <connections>
+                                <action selector="clickClose" destination="MfD-I2-iIp" id="aCd-22-kBZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="填充" id="mid-yW-i1x">
+                            <connections>
+                                <action selector="tianchong" destination="MfD-I2-iIp" id="qkp-UB-laO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="NR7-Fg-Sur" id="If4-RY-ePZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2A-8f-Hfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-33" y="-230"/>
+            <point key="canvasLocation" x="86" y="-231"/>
         </scene>
     </scenes>
 </document>

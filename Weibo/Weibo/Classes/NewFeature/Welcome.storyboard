@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Xap-lJ-ELr">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="BPC-Ew-Zgt">
+            <objects>
+                <viewController id="Xap-lJ-ELr" customClass="WelcomeViewController" customModule="Weibo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GHl-uh-b3L"/>
+                        <viewControllerLayoutGuide type="bottom" id="RbV-3U-ST4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TPK-ly-xr8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="aiN-a4-N1b"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="tqF-5e-2kc">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="gXg-39-NzI"/>
+                                    <constraint firstAttribute="width" constant="90" id="lmp-BG-6ua"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIP-Rd-Rhv">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aiN-a4-N1b" firstAttribute="top" secondItem="GHl-uh-b3L" secondAttribute="bottom" id="2DE-SD-8vI"/>
+                            <constraint firstItem="RbV-3U-ST4" firstAttribute="top" secondItem="aiN-a4-N1b" secondAttribute="bottom" id="H5b-lN-j9w"/>
+                            <constraint firstItem="aIP-Rd-Rhv" firstAttribute="centerX" secondItem="tqF-5e-2kc" secondAttribute="centerX" id="HNL-nb-cAa"/>
+                            <constraint firstItem="tqF-5e-2kc" firstAttribute="centerX" secondItem="TPK-ly-xr8" secondAttribute="centerX" id="IZ4-cV-x4s"/>
+                            <constraint firstItem="aiN-a4-N1b" firstAttribute="leading" secondItem="TPK-ly-xr8" secondAttribute="leading" id="Qla-H9-myc"/>
+                            <constraint firstItem="aIP-Rd-Rhv" firstAttribute="top" secondItem="tqF-5e-2kc" secondAttribute="bottom" constant="10" id="Usf-nd-v2b"/>
+                            <constraint firstItem="RbV-3U-ST4" firstAttribute="top" secondItem="tqF-5e-2kc" secondAttribute="bottom" constant="160" id="lEM-0c-uh6"/>
+                            <constraint firstAttribute="trailing" secondItem="aiN-a4-N1b" secondAttribute="trailing" id="uWw-sO-cyb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="iconBottomCons" destination="lEM-0c-uh6" id="ADP-Gx-PBy"/>
+                        <outlet property="iconImageView" destination="tqF-5e-2kc" id="2ti-5r-YdS"/>
+                        <outlet property="textLabel" destination="aIP-Rd-Rhv" id="djX-8T-ek8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yCy-dc-vpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.80000000000001" y="9.4452773613193415"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ad_background" width="320" height="480"/>
+        <image name="avatar_default_big" width="85" height="85"/>
+    </resources>
+</document>

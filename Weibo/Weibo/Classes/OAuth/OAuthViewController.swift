@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class OAuthViewController: UIViewController {
 
@@ -19,7 +20,7 @@ class OAuthViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        let urlStr = "https://api.weibo.com/oauth2/authorize?client_id=3090663153&redirect_uri=http://www.baidu.com"
+        let urlStr = "https://api.weibo.com/oauth2/authorize?client_id=\(WB_App_Key)&redirect_uri=\(WB_Redirect_uri)"
         
         guard let url = URL(string: urlStr) else {
             return
@@ -29,9 +30,28 @@ class OAuthViewController: UIViewController {
         
         webView.loadRequest(request)
     }
+    
+    @IBAction func clickClose() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func tianchong() {
+    }
 }
 
 extension OAuthViewController : UIWebViewDelegate{
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        //显示提醒
+       SVProgressHUD.showInfo(withStatus: "正在加载中...")
+        
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
+    
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
@@ -50,16 +70,20 @@ extension OAuthViewController : UIWebViewDelegate{
         guard let urlStr = request.url?.absoluteString else {
             return false
         }
-        if !urlStr.hasPrefix("http://www.baidu.com/") {
+        if !urlStr.hasPrefix(WB_Redirect_uri) {
             print("不是授权回调页面")
             return true
         }
         print("是授权回调页面")
         //判断授权回调的地址中是否包含code=
         let key = "code="
-        if urlStr.contains(key) {
-            let code = request.url!.query?.substring(from: key.endIndex)
-            let codeStr = (code! as NSString).substring(to: 32)
+        guard let str = request.url?.query else {
+            return false
+        }
+        
+        if str.hasPrefix(key) {
+            let code = str.substring(from: key.endIndex)
+            let codeStr = (code as NSString).substring(to: 32)
             loadAccessToken(codeStr : codeStr)
             return false
         }
@@ -74,13 +98,21 @@ extension OAuthViewController : UIWebViewDelegate{
         let path = "https://api.weibo.com/oauth2/access_token"
         
         // 2.准备请求参数
-        let params = ["client_id": "3090663153", "client_secret": "6ab4bbc298a13dc13a39360a4ff8f6ed", "grant_type": "authorization_code", "code": codeStr, "redirect_uri": "http://www.baidu.com"]
+        let params = ["client_id": WB_App_Key, "client_secret": WB_App_Secret, "grant_type": "authorization_code", "code": codeStr, "redirect_uri": WB_Redirect_uri]
         
         NetworkTool.shareInstance.post(path, parameters: params, progress: nil, success: { (task: URLSessionDataTask, responseObj: Any?) in
             
-            let userAccount = UserAccount.init(dict: responseObj! as! [String : AnyObject])
+            let account = UserAccount.init(dict: responseObj as! [String : AnyObject])
            
-            print(userAccount.saveAccount())
+            //获取用户信息
+            account.loadUserInfo(finished: { (account, error) in
+                account?.saveAccount()
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: WHSwitchRootViewController), object: false)
+                
+                self.clickClose()
+                
+            })
             
         }) { (task: URLSessionDataTask?, error: Error) in
             print(error)

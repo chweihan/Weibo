@@ -35,7 +35,7 @@ class TitleButton: UIButton {
     }
     
     override func setTitle(_ title: String?, for state: UIControlState) {
-        super.setTitle(title! + "  ", for: state)
+        super.setTitle((title ?? "") + "  ", for: state)
     }
     
     override func layoutSubviews() {

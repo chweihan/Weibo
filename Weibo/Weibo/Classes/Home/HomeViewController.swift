@@ -82,7 +82,7 @@ class HomeViewController: BaseViewController {
     private lazy var titleButton : UIButton = {
         //设置标题
         let btn = TitleButton()
-        btn.setTitle("cweihan", for: .normal)
+        btn.setTitle(UserAccount.loadUserAccount()?.screen_name, for: .normal)
         btn.addTarget(self, action: #selector(self.titleBtnClick(titleBtn:)), for: .touchUpInside)
         return btn
     }()

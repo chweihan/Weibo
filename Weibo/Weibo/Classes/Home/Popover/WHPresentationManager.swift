@@ -8,10 +8,7 @@
 
 import UIKit
 
-//自定义转场的展现
-let WHPresentationManagerDidPresented = "WHPresentationManagerDidPresented"
-//自定义转场的消失
-let WHPresentationManagerDidDismissed = "WHPresentationManagerDidDismissed"
+
 
 class WHPresentationManager: NSObject ,UIViewControllerTransitioningDelegate ,UIViewControllerAnimatedTransitioning{
     
