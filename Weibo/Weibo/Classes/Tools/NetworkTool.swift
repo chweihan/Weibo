@@ -9,61 +9,40 @@
 import UIKit
 import  AFNetworking
 
-enum WHRequestType {
-    case Get
-    case Post
-}
-
 class NetworkTool: AFHTTPSessionManager {
     
     //swift推荐我们这边编写单例
     static let shareInstance : NetworkTool = {
-        
-//        let baseURL = NSURL(string: "https://api.weibo.com/")!
-        
-//        let instance = NetworkTool(baseURL: baseURL as URL, sessionConfiguration: URLSessionConfiguration.default)
         let instance = NetworkTool()
-        
-//        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
-        
         instance.responseSerializer.acceptableContentTypes = NSSet(objects:"application/json", "text/json", "text/javascript", "text/plain") as? Set
 
-        
         return instance
     }()
     
-    //将成功和失败的回调写在一个逃逸闭包中
-//    func request(requestType : WHRequestType, url : String , parameters : [String : Any], resultBlock : @escaping([String : Any]?, Error?) -> ()) {
-//    
-//        //成功闭包
-//        let successBlock = {(task : URLSessionDataTask)}
-//        
-//        
-//    }
-//    
-
+    // MARK: - 外部控制方法
+    func loadStatuses(finished : @escaping (_ array : [[String : Any]]?, _ error: NSError?) -> ()) {
+        assert(UserAccount.loadUserAccount() != nil, "必须")
+        //准备路径
+        let path = "https://api.weibo.com/2/statuses/home_timeline.json"
+        //准备参数
+        let params = ["access_token" : (UserAccount.loadUserAccount()?.access_token!)! as String]
+ 
+        get(path, parameters: params, progress: nil, success: { (task: URLSessionDataTask, responseObj: Any?) in
+            
+            //返回数据给调用者
+            guard let arr = (responseObj as! [String : Any])["statuses"] as? [[String : Any]] else {
+                finished(nil,NSError(domain: "com.baidu.cwh", code: 10000, userInfo:["message":"没有获取到数据"]))
+                return
+            }
+            
+            finished(arr, nil)
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+            }) { (task: URLSessionDataTask?, error: Error) in
+                
+                finished(nil, error as NSError?)
+        }
+        
+    }
     
     
 }

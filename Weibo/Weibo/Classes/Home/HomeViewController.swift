@@ -7,8 +7,16 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class HomeViewController: BaseViewController {
+    
+    //保存所有微博数据
+    var statuses : [Status]?{
+        didSet{
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +34,33 @@ class HomeViewController: BaseViewController {
         //注册通知
         NotificationCenter.default.addObserver(self, selector: #selector(self.titleChange), name: NSNotification.Name(rawValue: WHPresentationManagerDidPresented), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.titleChange), name: NSNotification.Name(rawValue: WHPresentationManagerDidDismissed), object: nil)
+        
+        //获取数据
+        loadData()
+    }
+    
+    //获取数据
+    func loadData() {
+        
+        NetworkTool.shareInstance.loadStatuses { (array : [[String : Any]]?, error: NSError?) in
+            if error != nil {
+                SVProgressHUD.showError(withStatus: "获取微博数据失败")
+                return
+            }
+            guard let arr = array else {
+                return
+            }
+            
+            //将字典数组转换为模型数组
+            var models = [Status]()
+            for dict in arr {
+                let status = Status(dict)
+                models.append(status)
+            }
+            print(models)
+            //保存数据
+            self.statuses = models
+        }
     }
     
     //按钮点击事件
@@ -86,6 +121,26 @@ class HomeViewController: BaseViewController {
         btn.addTarget(self, action: #selector(self.titleBtnClick(titleBtn:)), for: .touchUpInside)
         return btn
     }()
+}
+
+///tableView数据源
+extension HomeViewController {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statuses?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! HomeTableViewCell
+        cell.status = self.statuses?[indexPath.row]
+        return cell
+    }
+    
+}
+
+///tableView代理
+extension HomeViewController {
+    
 }
 
 

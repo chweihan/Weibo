@@ -47,6 +47,9 @@
 		E7E66CAC1DB5F974006CBA8A /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66CAB1DB5F974006CBA8A /* OAuthViewController.swift */; };
 		E7E66CAE1DB5F97E006CBA8A /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E66CAD1DB5F97E006CBA8A /* OAuth.storyboard */; };
 		E7E66CB01DB61CBE006CBA8A /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66CAF1DB61CBE006CBA8A /* NetworkTool.swift */; };
+		E7FDD0E71DBE04240096B2F3 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD0E61DBE04240096B2F3 /* Status.swift */; };
+		E7FDD0ED1DBEF2270096B2F3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD0EC1DBEF2270096B2F3 /* User.swift */; };
+		E7FDD0EF1DBF00450096B2F3 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD0EE1DBF00450096B2F3 /* HomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,9 @@
 		E7E66CAB1DB5F974006CBA8A /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		E7E66CAD1DB5F97E006CBA8A /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
 		E7E66CAF1DB61CBE006CBA8A /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
+		E7FDD0E61DBE04240096B2F3 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		E7FDD0EC1DBEF2270096B2F3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E7FDD0EE1DBF00450096B2F3 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +267,9 @@
 				E7E66BD41DAF72C9006CBA8A /* Popover */,
 				E7E66B9D1DADDDCC006CBA8A /* HomeViewController.swift */,
 				E7E66BB11DAE7FE8006CBA8A /* Home.storyboard */,
+				E7FDD0EE1DBF00450096B2F3 /* HomeTableViewCell.swift */,
+				E7FDD0E61DBE04240096B2F3 /* Status.swift */,
+				E7FDD0EC1DBEF2270096B2F3 /* User.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -549,7 +558,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7E66BA41DADDE00006CBA8A /* ProfileViewController.swift in Sources */,
+				E7FDD0E71DBE04240096B2F3 /* Status.swift in Sources */,
+				E7FDD0EF1DBF00450096B2F3 /* HomeTableViewCell.swift in Sources */,
 				E73C1C981DB86B9C00107608 /* String+Extension.swift in Sources */,
+				E7FDD0ED1DBEF2270096B2F3 /* User.swift in Sources */,
 				E74FF7031DA8F86D00012B97 /* AppDelegate.swift in Sources */,
 				E7E66CA91DB49AA4006CBA8A /* QRCodeViewController.swift in Sources */,
 				E73C1CA11DB9C20400107608 /* NewFeatureViewController.swift in Sources */,
