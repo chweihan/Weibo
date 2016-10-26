@@ -50,6 +50,8 @@
 		E7FDD0E71DBE04240096B2F3 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD0E61DBE04240096B2F3 /* Status.swift */; };
 		E7FDD0ED1DBEF2270096B2F3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD0EC1DBEF2270096B2F3 /* User.swift */; };
 		E7FDD0EF1DBF00450096B2F3 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD0EE1DBF00450096B2F3 /* HomeTableViewCell.swift */; };
+		E7FDD0F11DBF64B40096B2F3 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD0F01DBF64B40096B2F3 /* Date+Extension.swift */; };
+		E7FDD0F31DC043AC0096B2F3 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD0F21DC043AC0096B2F3 /* StatusViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,8 @@
 		E7FDD0E61DBE04240096B2F3 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		E7FDD0EC1DBEF2270096B2F3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E7FDD0EE1DBF00450096B2F3 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		E7FDD0F01DBF64B40096B2F3 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		E7FDD0F21DC043AC0096B2F3 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +274,7 @@
 				E7FDD0EE1DBF00450096B2F3 /* HomeTableViewCell.swift */,
 				E7FDD0E61DBE04240096B2F3 /* Status.swift */,
 				E7FDD0EC1DBEF2270096B2F3 /* User.swift */,
+				E7FDD0F21DC043AC0096B2F3 /* StatusViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				E7E66CAF1DB61CBE006CBA8A /* NetworkTool.swift */,
 				E73C1C951DB8679D00107608 /* Common.swift */,
 				E73C1C971DB86B9C00107608 /* String+Extension.swift */,
+				E7FDD0F01DBF64B40096B2F3 /* Date+Extension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -565,6 +571,8 @@
 				E74FF7031DA8F86D00012B97 /* AppDelegate.swift in Sources */,
 				E7E66CA91DB49AA4006CBA8A /* QRCodeViewController.swift in Sources */,
 				E73C1CA11DB9C20400107608 /* NewFeatureViewController.swift in Sources */,
+				E7FDD0F31DC043AC0096B2F3 /* StatusViewModel.swift in Sources */,
+				E7FDD0F11DBF64B40096B2F3 /* Date+Extension.swift in Sources */,
 				E7E66CAC1DB5F974006CBA8A /* OAuthViewController.swift in Sources */,
 				E7E66BDA1DAF906F006CBA8A /* PopoverViewController.swift in Sources */,
 				E7C9DD971DB7514B00D49180 /* UserAccount.swift in Sources */,

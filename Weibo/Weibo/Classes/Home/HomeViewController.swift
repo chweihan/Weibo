@@ -12,7 +12,7 @@ import SVProgressHUD
 class HomeViewController: BaseViewController {
     
     //保存所有微博数据
-    var statuses : [Status]?{
+    var viewModels : [StatusViewModel]?{
         didSet{
             tableView.reloadData()
         }
@@ -52,14 +52,15 @@ class HomeViewController: BaseViewController {
             }
             
             //将字典数组转换为模型数组
-            var models = [Status]()
+            var viewModels = [StatusViewModel]()
             for dict in arr {
                 let status = Status(dict)
-                models.append(status)
+                let viewModel = StatusViewModel.init(status)
+                viewModels.append(viewModel)
+                print(viewModel.status)
             }
-            print(models)
             //保存数据
-            self.statuses = models
+            self.viewModels = viewModels
         }
     }
     
@@ -127,12 +128,13 @@ class HomeViewController: BaseViewController {
 extension HomeViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statuses?.count ?? 0
+        return viewModels?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! HomeTableViewCell
-        cell.status = self.statuses?[indexPath.row]
+//        cell.status = self.statuses?[indexPath.row]
+        cell.viewModel = self.viewModels?[indexPath.row]
         return cell
     }
     
