@@ -52,6 +52,7 @@
 		E7FDD0EF1DBF00450096B2F3 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD0EE1DBF00450096B2F3 /* HomeTableViewCell.swift */; };
 		E7FDD0F11DBF64B40096B2F3 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD0F01DBF64B40096B2F3 /* Date+Extension.swift */; };
 		E7FDD0F31DC043AC0096B2F3 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD0F21DC043AC0096B2F3 /* StatusViewModel.swift */; };
+		E7FDD0F71DC06C420096B2F3 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD0F61DC06C420096B2F3 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		E7FDD0EE1DBF00450096B2F3 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		E7FDD0F01DBF64B40096B2F3 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		E7FDD0F21DC043AC0096B2F3 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
+		E7FDD0F61DC06C420096B2F3 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +315,7 @@
 		E7E66B9A1DADD7B9006CBA8A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E7FDD0F61DC06C420096B2F3 /* R.generated.swift */,
 				E7E66BAA1DAE3D38006CBA8A /* UIButton-Extension.swift */,
 				E7E66BCE1DAF3E07006CBA8A /* UIBarButtonItem-Extension.swift */,
 				E7E66BD21DAF6802006CBA8A /* TitleButton.swift */,
@@ -372,6 +375,7 @@
 			buildConfigurationList = E74FF7271DA8F86E00012B97 /* Build configuration list for PBXNativeTarget "Weibo" */;
 			buildPhases = (
 				C651F6008FAC174FD659F9A3 /* [CP] Check Pods Manifest.lock */,
+				E7FDD0F51DC06BD20096B2F3 /* ShellScript */,
 				E74FF6FB1DA8F86D00012B97 /* Sources */,
 				E74FF6FC1DA8F86D00012B97 /* Frameworks */,
 				E74FF6FD1DA8F86D00012B97 /* Resources */,
@@ -556,6 +560,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		E7FDD0F51DC06BD20096B2F3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -574,6 +591,7 @@
 				E7FDD0F31DC043AC0096B2F3 /* StatusViewModel.swift in Sources */,
 				E7FDD0F11DBF64B40096B2F3 /* Date+Extension.swift in Sources */,
 				E7E66CAC1DB5F974006CBA8A /* OAuthViewController.swift in Sources */,
+				E7FDD0F71DC06C420096B2F3 /* R.generated.swift in Sources */,
 				E7E66BDA1DAF906F006CBA8A /* PopoverViewController.swift in Sources */,
 				E7C9DD971DB7514B00D49180 /* UserAccount.swift in Sources */,
 				E7E66BCF1DAF3E07006CBA8A /* UIBarButtonItem-Extension.swift in Sources */,

@@ -85,10 +85,8 @@ class HomeViewController: BaseViewController {
     
     func titleBtnClick(titleBtn : TitleButton) {
        
-        
         //显示菜单,创建菜单
-        let sb = UIStoryboard(name: "Popover", bundle: nil)
-        guard let menuView = sb.instantiateInitialViewController() else {
+        guard let menuView = R.storyboard.popover.instantiateInitialViewController() else {
             return
         }
         
@@ -103,8 +101,7 @@ class HomeViewController: BaseViewController {
     }
     
     func rightBtnClick() {
-        let sb = UIStoryboard(name: "QRCode", bundle: nil)
-        let vc = sb.instantiateInitialViewController()!
+        let vc = R.storyboard.qRCode.instantiateInitialViewController()!
         present(vc, animated: true, completion: nil)
     }
     
@@ -133,7 +130,6 @@ extension HomeViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! HomeTableViewCell
-//        cell.status = self.statuses?[indexPath.row]
         cell.viewModel = self.viewModels?[indexPath.row]
         return cell
     }

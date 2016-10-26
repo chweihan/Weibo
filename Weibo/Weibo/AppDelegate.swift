@@ -54,11 +54,9 @@ extension AppDelegate {
     
     @objc fileprivate func changeRootViewController(notice : Notification) {
         if notice.object as! Bool {
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            window?.rootViewController = sb.instantiateInitialViewController()!
+            window?.rootViewController = R.storyboard.main.instantiateInitialViewController()!
         }else {
-            let sb = UIStoryboard(name: "Welcome", bundle: nil)
-            window?.rootViewController = sb.instantiateInitialViewController()!
+            window?.rootViewController = R.storyboard.welcome.instantiateInitialViewController()!
         }
         
     }
@@ -68,16 +66,13 @@ extension AppDelegate {
         if UserAccount.isLogin() {
             //判断是否有新版本
             if isNewVersion() {
-                let sb = UIStoryboard(name: "NewFeature", bundle: nil)
-                return sb.instantiateInitialViewController()!
+                return R.storyboard.newFeature.instantiateInitialViewController()!
             }else {
-                let sb = UIStoryboard(name: "Welcome", bundle: nil)
-                return sb.instantiateInitialViewController()!
+                return R.storyboard.welcome.instantiateInitialViewController()!
             }
         }
         //没有登录
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        return sb.instantiateInitialViewController()!
+        return R.storyboard.main.instantiateInitialViewController()!
     }
     
     fileprivate func isNewVersion() -> Bool{
