@@ -40,7 +40,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 67 images.
+  /// This `R.image` struct is generated, and contains static references to 75 images.
   struct image {
     /// Image `LaunchImage`.
     static let launchImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "LaunchImage")
@@ -164,6 +164,22 @@ struct R: Rswift.Validatable {
     static let tabbar_profile_highlighted = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_profile_highlighted")
     /// Image `tabbar_profile`.
     static let tabbar_profile = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_profile")
+    /// Image `timeline_card_bottom_background`.
+    static let timeline_card_bottom_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "timeline_card_bottom_background")
+    /// Image `timeline_card_bottom_line_highlighted`.
+    static let timeline_card_bottom_line_highlighted = Rswift.ImageResource(bundle: R.hostingBundle, name: "timeline_card_bottom_line_highlighted")
+    /// Image `timeline_card_middle_background_highlighted`.
+    static let timeline_card_middle_background_highlighted = Rswift.ImageResource(bundle: R.hostingBundle, name: "timeline_card_middle_background_highlighted")
+    /// Image `timeline_card_middle_background`.
+    static let timeline_card_middle_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "timeline_card_middle_background")
+    /// Image `timeline_icon_comment`.
+    static let timeline_icon_comment = Rswift.ImageResource(bundle: R.hostingBundle, name: "timeline_icon_comment")
+    /// Image `timeline_icon_like`.
+    static let timeline_icon_like = Rswift.ImageResource(bundle: R.hostingBundle, name: "timeline_icon_like")
+    /// Image `timeline_icon_retweet`.
+    static let timeline_icon_retweet = Rswift.ImageResource(bundle: R.hostingBundle, name: "timeline_icon_retweet")
+    /// Image `timeline_icon_unlike`.
+    static let timeline_icon_unlike = Rswift.ImageResource(bundle: R.hostingBundle, name: "timeline_icon_unlike")
     /// Image `visitordiscover_feed_image_house`.
     static let visitordiscover_feed_image_house = Rswift.ImageResource(bundle: R.hostingBundle, name: "visitordiscover_feed_image_house")
     /// Image `visitordiscover_feed_image_smallicon`.
@@ -482,6 +498,46 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.tabbar_profile_highlighted, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "timeline_card_bottom_background", bundle: ..., traitCollection: ...)`
+    static func timeline_card_bottom_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.timeline_card_bottom_background, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "timeline_card_bottom_line_highlighted", bundle: ..., traitCollection: ...)`
+    static func timeline_card_bottom_line_highlighted(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.timeline_card_bottom_line_highlighted, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "timeline_card_middle_background", bundle: ..., traitCollection: ...)`
+    static func timeline_card_middle_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.timeline_card_middle_background, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "timeline_card_middle_background_highlighted", bundle: ..., traitCollection: ...)`
+    static func timeline_card_middle_background_highlighted(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.timeline_card_middle_background_highlighted, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "timeline_icon_comment", bundle: ..., traitCollection: ...)`
+    static func timeline_icon_comment(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.timeline_icon_comment, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "timeline_icon_like", bundle: ..., traitCollection: ...)`
+    static func timeline_icon_like(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.timeline_icon_like, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "timeline_icon_retweet", bundle: ..., traitCollection: ...)`
+    static func timeline_icon_retweet(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.timeline_icon_retweet, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "timeline_icon_unlike", bundle: ..., traitCollection: ...)`
+    static func timeline_icon_unlike(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.timeline_icon_unlike, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "visitordiscover_feed_image_house", bundle: ..., traitCollection: ...)`
     static func visitordiscover_feed_image_house(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.visitordiscover_feed_image_house, compatibleWith: traitCollection)
@@ -707,8 +763,12 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if UIKit.UIImage(named: "tabbar_home_highlighted") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'tabbar_home_highlighted' is used in storyboard 'Home', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "common_icon_membership") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'common_icon_membership' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "tabbar_home") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'tabbar_home' is used in storyboard 'Home', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "timeline_card_bottom_background") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'timeline_card_bottom_background' is used in storyboard 'Home', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "common_icon_membership") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'common_icon_membership' is used in storyboard 'Home', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "timeline_icon_unlike") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'timeline_icon_unlike' is used in storyboard 'Home', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "timeline_icon_comment") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'timeline_icon_comment' is used in storyboard 'Home', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "timeline_icon_retweet") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'timeline_icon_retweet' is used in storyboard 'Home', but couldn't be loaded.") }
       }
       
       fileprivate init() {}
