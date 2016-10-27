@@ -35,6 +35,18 @@ class HomeTableViewCell: UITableViewCell {
     /// 底部视图
     @IBOutlet weak var footerView: UIView!
     
+    // MARK: - 重写frame
+    override var frame: CGRect {
+        didSet {
+            var newFrame = frame
+//            newFrame.origin.x = 10
+//            newFrame.size.width -= 2 * 10
+            newFrame.size.height -= 10
+            newFrame.origin.y += 10
+            super.frame = newFrame
+        }
+    }
+    
     var viewModel : StatusViewModel? {
         didSet{
             //设置头像
@@ -68,6 +80,8 @@ class HomeTableViewCell: UITableViewCell {
             pictureCollectionViewHeightCons.constant = clvSize.height
         }
     }
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -143,7 +157,6 @@ extension HomeTableViewCell : UICollectionViewDataSource {
         cell.url = viewModel?.thumbnail_pic![indexPath.item]
         return cell
     }
-    
 }
 
 class HomePictureCell: UICollectionViewCell {
@@ -154,7 +167,5 @@ class HomePictureCell: UICollectionViewCell {
     }
     
     @IBOutlet weak var customIconImageView: UIImageView!
-    
-    
 }
 
