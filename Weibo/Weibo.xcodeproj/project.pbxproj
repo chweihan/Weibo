@@ -274,9 +274,9 @@
 				E7E66B9D1DADDDCC006CBA8A /* HomeViewController.swift */,
 				E7E66BB11DAE7FE8006CBA8A /* Home.storyboard */,
 				E7FDD0EE1DBF00450096B2F3 /* HomeTableViewCell.swift */,
+				E7FDD0F21DC043AC0096B2F3 /* StatusViewModel.swift */,
 				E7FDD0E61DBE04240096B2F3 /* Status.swift */,
 				E7FDD0EC1DBEF2270096B2F3 /* User.swift */,
-				E7FDD0F21DC043AC0096B2F3 /* StatusViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";

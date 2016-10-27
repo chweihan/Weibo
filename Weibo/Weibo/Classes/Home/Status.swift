@@ -19,6 +19,8 @@ class Status: NSObject {
     var source : String?
     ///用户
     var user : User?
+    ///图片数组
+    var pic_urls : [[String : Any]]?
     
     init(_ dict : [String : Any]) {
         super.init()
