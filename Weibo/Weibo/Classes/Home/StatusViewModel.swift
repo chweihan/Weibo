@@ -57,7 +57,8 @@ class StatusViewModel: NSObject {
         
         // 处理配图url
         // 从模型中取出配图数组
-        if let picurls = status.pic_urls {
+//        if let picurls = status.pic_urls
+        if let picurls = (status.retweeted_status != nil) ? status.retweeted_status?.pic_urls :status.pic_urls {
             thumbnail_pic = [NSURL]()
             //遍历配图数组下载图片
             for dict in picurls {
@@ -68,6 +69,12 @@ class StatusViewModel: NSObject {
                 let url = NSURL(string: urlStr)!
                 thumbnail_pic?.append(url)
             }
+        }
+        
+        //处理转发
+        if let text = status.retweeted_status?.text {
+            let name = status.retweeted_status?.user?.screen_name ?? ""
+            forwardText = "@" + name + ":" + text
         }
         
     }
@@ -89,4 +96,7 @@ class StatusViewModel: NSObject {
     
     /// 保存所有配图URL
     var thumbnail_pic : [NSURL]?
+    
+    /// 转发微博格式化之后正文
+    var forwardText : String?
 }

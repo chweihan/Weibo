@@ -584,8 +584,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `forwardCell`.
+    static let forwardCell: Rswift.ReuseIdentifier<HomeTableViewCell> = Rswift.ReuseIdentifier(identifier: "forwardCell")
     /// Reuse identifier `homeCell`.
     static let homeCell: Rswift.ReuseIdentifier<HomeTableViewCell> = Rswift.ReuseIdentifier(identifier: "homeCell")
     /// Reuse identifier `newfeatureCell`.

@@ -35,12 +35,13 @@ class HomeTableViewCell: UITableViewCell {
     /// 底部视图
     @IBOutlet weak var footerView: UIView!
     
+    /// 转发文字
+    @IBOutlet weak var forwardLabel: UILabel!
+    
     // MARK: - 重写frame
     override var frame: CGRect {
         didSet {
             var newFrame = frame
-//            newFrame.origin.x = 10
-//            newFrame.size.width -= 2 * 10
             newFrame.size.height -= 10
             newFrame.origin.y += 10
             super.frame = newFrame
@@ -78,6 +79,11 @@ class HomeTableViewCell: UITableViewCell {
             //更新cell尺寸
             pictureCollectionViewWidthCons.constant = clvSize.width
             pictureCollectionViewHeightCons.constant = clvSize.height
+            
+            if let text = viewModel?.forwardText {
+                forwardLabel.text = text
+                forwardLabel.preferredMaxLayoutWidth = UIScreen.main.bounds.size.width - 2 * 10
+            }
         }
     }
     
@@ -147,7 +153,6 @@ class HomeTableViewCell: UITableViewCell {
 
 
 extension HomeTableViewCell : UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.thumbnail_pic?.count ?? 0
     }
@@ -165,7 +170,6 @@ class HomePictureCell: UICollectionViewCell {
             customIconImageView.sd_setImage(with: url as URL!)
         }
     }
-    
     @IBOutlet weak var customIconImageView: UIImageView!
 }
 

@@ -41,6 +41,7 @@ class HomeViewController: BaseViewController {
         
         tableView.estimatedRowHeight = 400
 //        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.separatorStyle = .none
     }
     
     //获取数据
@@ -104,6 +105,7 @@ class HomeViewController: BaseViewController {
             // 下载完成
             print("全部下载完成")
             self.viewModels = viewModels
+            
         }
     }
     
@@ -174,7 +176,9 @@ extension HomeViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! HomeTableViewCell
+        let viewModel = viewModels![indexPath.row]
+        let identifier = (viewModel.status.retweeted_status != nil) ? "forwardCell" : "homeCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! HomeTableViewCell
         cell.viewModel = self.viewModels?[indexPath.row]
         return cell
     }
@@ -187,11 +191,13 @@ extension HomeViewController {
         //没有缓存行高
         guard let height = rowHeightCaches[viewModel?.status.idstr ?? "-1"] else {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell") as! HomeTableViewCell
+            let viewModel = viewModels![indexPath.row]
+            let identifier = (viewModel.status.retweeted_status != nil) ? "forwardCell" : "homeCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! HomeTableViewCell
             //取出高度
-            let temp = cell.calculatRowHeight(viewModel!)
+            let temp = cell.calculatRowHeight(viewModel)
             
-            rowHeightCaches[viewModel?.status.idstr ?? "-1"] = temp
+            rowHeightCaches[viewModel.status.idstr ?? "-1"] = temp
             
             return temp
         }

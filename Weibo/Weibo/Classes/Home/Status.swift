@@ -21,6 +21,9 @@ class Status: NSObject {
     var user : User?
     ///图片数组
     var pic_urls : [[String : Any]]?
+    ///转发微博
+    var retweeted_status : Status?
+    
     
     init(_ dict : [String : Any]) {
         super.init()
@@ -29,10 +32,17 @@ class Status: NSObject {
     
     //kvc的setValuesForKeys的内部会调用setValue
     override func setValue(_ value: Any?, forKey key: String) {
+        //拦截user赋值操作
         if key == "user" {
             user = User(value as! [String : Any])
             return
         }
+        
+        if key == "retweeted_status" {
+            retweeted_status = Status(value as! [String : Any])
+            return
+        }
+        
         super.setValue(value, forKey: key)
     }
     
@@ -41,7 +51,7 @@ class Status: NSObject {
     }
     
     override var description: String {
-        let property = ["created_at", "idstr", "text", "source","user"]
+        let property = ["created_at", "idstr", "text", "source","user","retweeted_status"]
         let dict = dictionaryWithValues(forKeys: property)
         return "\(dict)"
     }
