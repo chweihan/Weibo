@@ -40,7 +40,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 75 images.
+  /// This `R.image` struct is generated, and contains static references to 77 images.
   struct image {
     /// Image `LaunchImage`.
     static let launchImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "LaunchImage")
@@ -164,6 +164,10 @@ struct R: Rswift.Validatable {
     static let tabbar_profile_highlighted = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_profile_highlighted")
     /// Image `tabbar_profile`.
     static let tabbar_profile = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_profile")
+    /// Image `tableview_loading`.
+    static let tableview_loading = Rswift.ImageResource(bundle: R.hostingBundle, name: "tableview_loading")
+    /// Image `tableview_pull_refresh`.
+    static let tableview_pull_refresh = Rswift.ImageResource(bundle: R.hostingBundle, name: "tableview_pull_refresh")
     /// Image `timeline_card_bottom_background`.
     static let timeline_card_bottom_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "timeline_card_bottom_background")
     /// Image `timeline_card_bottom_line_highlighted`.
@@ -498,6 +502,16 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.tabbar_profile_highlighted, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "tableview_loading", bundle: ..., traitCollection: ...)`
+    static func tableview_loading(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tableview_loading, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "tableview_pull_refresh", bundle: ..., traitCollection: ...)`
+    static func tableview_pull_refresh(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tableview_pull_refresh, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "timeline_card_bottom_background", bundle: ..., traitCollection: ...)`
     static func timeline_card_bottom_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.timeline_card_bottom_background, compatibleWith: traitCollection)
@@ -571,10 +585,17 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
+    /// Nib `RefreshView`.
+    static let refreshView = _R.nib._RefreshView()
     /// Nib `TouristView`.
     static let touristView = _R.nib._TouristView()
+    
+    /// `UINib(name: "RefreshView", in: bundle)`
+    static func refreshView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.refreshView)
+    }
     
     /// `UINib(name: "TouristView", in: bundle)`
     static func touristView(_: Void = ()) -> UIKit.UINib {
@@ -711,6 +732,23 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _TouristView.validate()
+      try _RefreshView.validate()
+    }
+    
+    struct _RefreshView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "RefreshView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> RefreshView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RefreshView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "tableview_loading") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'tableview_loading' is used in nib 'RefreshView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "tableview_pull_refresh") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'tableview_pull_refresh' is used in nib 'RefreshView', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
     }
     
     struct _TouristView: Rswift.NibResourceType, Rswift.Validatable {

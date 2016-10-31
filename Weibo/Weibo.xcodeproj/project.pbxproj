@@ -47,6 +47,8 @@
 		E7E66CAC1DB5F974006CBA8A /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66CAB1DB5F974006CBA8A /* OAuthViewController.swift */; };
 		E7E66CAE1DB5F97E006CBA8A /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E66CAD1DB5F97E006CBA8A /* OAuth.storyboard */; };
 		E7E66CB01DB61CBE006CBA8A /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66CAF1DB61CBE006CBA8A /* NetworkTool.swift */; };
+		E7F3D4E51DC7170D00A4EC22 /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3D4E41DC7170D00A4EC22 /* RefreshView.swift */; };
+		E7F3D4E71DC7171A00A4EC22 /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7F3D4E61DC7171A00A4EC22 /* RefreshView.xib */; };
 		E7FDD0E71DBE04240096B2F3 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD0E61DBE04240096B2F3 /* Status.swift */; };
 		E7FDD0ED1DBEF2270096B2F3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD0EC1DBEF2270096B2F3 /* User.swift */; };
 		E7FDD0EF1DBF00450096B2F3 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FDD0EE1DBF00450096B2F3 /* HomeTableViewCell.swift */; };
@@ -121,6 +123,8 @@
 		E7E66CAB1DB5F974006CBA8A /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		E7E66CAD1DB5F97E006CBA8A /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
 		E7E66CAF1DB61CBE006CBA8A /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
+		E7F3D4E41DC7170D00A4EC22 /* RefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
+		E7F3D4E61DC7171A00A4EC22 /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
 		E7FDD0E61DBE04240096B2F3 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		E7FDD0EC1DBEF2270096B2F3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E7FDD0EE1DBF00450096B2F3 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -269,6 +273,7 @@
 		E7E66B961DADD7B9006CBA8A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E7F3D4E31DC716E400A4EC22 /* Refresh */,
 				E7E66CA51DB479BE006CBA8A /* QRCode */,
 				E7E66BD41DAF72C9006CBA8A /* Popover */,
 				E7E66B9D1DADDDCC006CBA8A /* HomeViewController.swift */,
@@ -365,6 +370,15 @@
 				E7C9DD961DB7514B00D49180 /* UserAccount.swift */,
 			);
 			path = OAuth;
+			sourceTree = "<group>";
+		};
+		E7F3D4E31DC716E400A4EC22 /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				E7F3D4E41DC7170D00A4EC22 /* RefreshView.swift */,
+				E7F3D4E61DC7171A00A4EC22 /* RefreshView.xib */,
+			);
+			path = Refresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,6 +504,7 @@
 				E73C1CA31DB9C21D00107608 /* NewFeature.storyboard in Resources */,
 				E7E66BB61DAE7FFD006CBA8A /* Message.storyboard in Resources */,
 				E7E66CA71DB479D8006CBA8A /* QRCode.storyboard in Resources */,
+				E7F3D4E71DC7171A00A4EC22 /* RefreshView.xib in Resources */,
 				E74FF70A1DA8F86D00012B97 /* Assets.xcassets in Resources */,
 				E7E66BB31DAE7FE8006CBA8A /* Home.storyboard in Resources */,
 				E7E66BCB1DAE8C81006CBA8A /* TouristView.xib in Resources */,
@@ -586,6 +601,7 @@
 				E73C1C981DB86B9C00107608 /* String+Extension.swift in Sources */,
 				E7FDD0ED1DBEF2270096B2F3 /* User.swift in Sources */,
 				E74FF7031DA8F86D00012B97 /* AppDelegate.swift in Sources */,
+				E7F3D4E51DC7170D00A4EC22 /* RefreshView.swift in Sources */,
 				E7E66CA91DB49AA4006CBA8A /* QRCodeViewController.swift in Sources */,
 				E73C1CA11DB9C20400107608 /* NewFeatureViewController.swift in Sources */,
 				E7FDD0F31DC043AC0096B2F3 /* StatusViewModel.swift in Sources */,

@@ -40,8 +40,16 @@ class HomeViewController: BaseViewController {
         loadData()
         
         tableView.estimatedRowHeight = 400
-//        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorStyle = .none
+        
+        //下拉刷新控件
+        refreshControl = WHRefreshControl()
+        
+        refreshControl?.addTarget(self, action: #selector(self.loadNewData), for: .valueChanged)
+    }
+    
+    func loadNewData() {
+        print("loadNewData")
     }
     
     //获取数据
